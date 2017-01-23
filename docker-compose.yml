@@ -1,0 +1,24 @@
+version: '2'
+services:
+  zmq-hello-world-server:
+    build: ./zmq-hello-world-server-node
+    container_name: zmq-hello-world-server
+    image: zmq/zmq-hello-world-server
+    hostname: zmq-hello-world-server
+    ports:
+     - "5555:5555"
+    tty: true
+
+  zmq-hello-world-client:
+    build: ./zmq-hello-world-client-node
+    container_name: zmq-hello-world-client
+    image: zmq/zmq-hello-world-client
+    hostname: zmq-hello-world-client
+    tty: true
+
+networks:
+  default:
+    external:
+      name: zmq
+
+# docker network create zmq
