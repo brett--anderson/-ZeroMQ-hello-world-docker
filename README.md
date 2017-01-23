@@ -18,6 +18,10 @@ docker-compose up --build
 
 This will run both the client and server and you should see the output of the client and server as one sends messages to the other. After the client has sent 10 messages it will automatically exit, leaving the server running. To stop the server just enter `ctrl-c`
 
+## Using a different version of ZeroMQ or CMake
+
+In each of the Docker files in the `zmq-hello-world-client-node` and `zmq-hello-world-server-node` directories, search for the text `--branch v4.2.1`. This can be changed to any relase tags at https://github.com/zeromq/libzmq
+
 ## Running the server and client independently
 
 Assuming you already have Docker installed on your system, run the following command to create a virtual network which the client and server will communicate over using ØMQ.
